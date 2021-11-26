@@ -16,3 +16,13 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
+
+
+$router->get("/addresses/{id}", "AddressController@show");
+$router->get("/addresses", "AddressController@index");
+
+$router->post("/addresses", "AddressController@create");
+
+$router->put("/addresses/{id}", "AddressController@update");
+
+$router->delete("/addresses/{id}", "AddressController@destroy");
